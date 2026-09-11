@@ -41,7 +41,7 @@ if(PROJECT_IS_TOP_LEVEL)
 endif()
 
 # ── Dependencies ─────────────────────────────────────────────────────────────
-find_package(c_preproc REQUIRED)
+find_package(preproc REQUIRED)
 include(GNUInstallDirs)
 
 # ── Subdirectories ───────────────────────────────────────────────────────────
