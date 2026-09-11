@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Target: test_package
 # Type: Executable
-# Dependencies: c_preproc::c_preproc
+# Dependencies: preproc::preproc
 # ─────────────────────────────────────────────────────────────────────────────
 # Target definition
 add_executable(test_package)
@@ -15,5 +15,5 @@ target_sources(test_package
 # Target dependencies
 target_link_libraries(test_package
     PRIVATE
-        c_preproc::c_preproc
+        preproc::preproc
 )
