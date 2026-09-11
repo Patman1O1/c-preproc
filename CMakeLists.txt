@@ -1,6 +1,6 @@
 # ── Information ──────────────────────────────────────────────────────────────
 cmake_minimum_required(VERSION 4.3.0)
-project("c_preproc"
+project("preproc"
         VERSION 0.1.0
         DESCRIPTION ""
         LANGUAGES C
@@ -68,50 +68,50 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Target: c_preproc_headers
-# Alias: c_preproc::c_preproc_headers
+# Target: preproc_headers
+# Alias: preproc::preproc_headers
 # Type: Interface Library
 # ───────────────────────────────────────────────────────────────────────────── 
 # Target definition
-add_library(c_preproc_headers INTERFACE)
+add_library(preproc_headers INTERFACE)
 
 # Target alias
-add_library(c_preproc::c_preproc_headers 
+add_library(preproc::preproc_headers 
     ALIAS
-        c_preproc_headers
+        preproc_headers
 )
 
 # Target headers
-target_include_directories(c_preproc_headers
+target_include_directories(preproc_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Target: c_preproc
-# Alias: c_preproc::c_preproc
+# Target: preproc
+# Alias: preproc::preproc
 # Type: Interface Library
-# Dependencies: c_preproc::c_preproc_headers
+# Dependencies: preproc::preproc_headers
 # ─────────────────────────────────────────────────────────────────────────────
 # Target definition
-add_library(c_preproc INTERFACE)
+add_library(preproc INTERFACE)
 
 # Target alias
-add_library(c_preproc::c_preproc
+add_library(preproc::preproc
     ALIAS
-        c_preproc
+        preproc
 )
 
 # Target dependencies
-target_link_libraries(c_preproc
+target_link_libraries(preproc
     INTERFACE
-        c_preproc::c_preproc_headers
+        preproc::preproc_headers
 )
 
 # Target properties
-set_target_properties(c_preproc PROPERTIES
-        OUTPUT_NAME c_preproc
+set_target_properties(preproc PROPERTIES
+        OUTPUT_NAME preproc
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         C_VISIBILITY_PRESET hidden
@@ -119,12 +119,12 @@ set_target_properties(c_preproc PROPERTIES
 )
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
-    # Install c_preproc
-    install(TARGETS c_preproc
-            RUNTIME COMPONENT c_preproc
-            LIBRARY COMPONENT c_preproc
-            NAMELINK_COMPONENT c_preproc
-            ARCHIVE COMPONENT c_preproc
+    # Install preproc
+    install(TARGETS preproc
+            RUNTIME COMPONENT preproc
+            LIBRARY COMPONENT preproc
+            NAMELINK_COMPONENT preproc
+            ARCHIVE COMPONENT preproc
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
