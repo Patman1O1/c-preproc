@@ -2,8 +2,8 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
 import os
 
-class CPreproc(ConanFile):
-    name = "c_preproc"
+class Preproc(ConanFile):
+    name = "preproc"
     version = "0.1.0"
     author = "Patman1O1"
     description = ""
@@ -44,6 +44,6 @@ class CPreproc(ConanFile):
     def package(self) -> None: CMake(self).install()
 
     def package_info(self) -> None:
-        self.cpp_info.set_property("cmake_target_name", "c_preproc::c_preproc")
+        self.cpp_info.set_property("cmake_target_name", "preproc::preproc")
         self.cpp_info.bindirs = []
         self.cpp_info.libdirs = []
