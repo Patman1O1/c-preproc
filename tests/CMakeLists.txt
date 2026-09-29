@@ -9,34 +9,34 @@ include(GoogleTest)
 enable_testing()
 
 # ───────────────────────────────────────────────────────────────────────────── 
-# Target: preproc_test
-# Alias: preproc::preproc_test
+# Target: c_preproc_test
+# Alias: c_preproc::c_preproc_test
 # Type: Executable
 # Dependencies: GTest::gtest_main,
 #               GTest::gmock_main,
-#               preproc::preproc_headers
+#               c_preproc::c_preproc_headers
 # ─────────────────────────────────────────────────────────────────────────────
 # Target definition
-add_executable(preproc_test)
+add_executable(c_preproc_test)
 
 # Target alias
-add_executable(preproc::preproc_test
-    ALIAS preproc_test
+add_executable(c_preproc::c_preproc_test
+    ALIAS c_preproc_test
 )
 
 # Target sources
-target_sources(preproc_test
+target_sources(c_preproc_test
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/preproc_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/c_preproc_test.cpp
 )
 
 # Target dependencies
-target_link_libraries(preproc_test
+target_link_libraries(c_preproc_test
     PRIVATE
-        preproc::preproc_headers
+        c_preproc::c_preproc_headers
         GTest::gtest_main
         GTest::gmock_main
 )
 
 # Test discovery
-gtest_discover_tests(preproc_test)
+gtest_discover_tests(c_preproc_test)
