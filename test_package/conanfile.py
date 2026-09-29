@@ -6,7 +6,8 @@ import os
 class TestPackage(ConanFile):
     settings = ("os", "arch", "compiler", "build_type")
 
-    def requirements(self) -> None: self.requires(self.tested_reference_str)
+    def requirements(self) -> None:
+        self.requires("c_preproc/[>=1.0.0]") 
 
     def build_requirements(self) -> None:
         self.tool_requires("cmake/[>=4.3.0]")
