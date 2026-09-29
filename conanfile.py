@@ -2,9 +2,9 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
 import os
 
-class Preproc(ConanFile):
-    name = "preproc"
-    version = "0.1.0"
+class CPreproc(ConanFile):
+    name = "c_preproc"
+    version = "1.0.0"
     author = "Patman1O1"
     description = ""
 
