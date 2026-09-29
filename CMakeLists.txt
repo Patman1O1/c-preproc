@@ -68,21 +68,21 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Target: preproc_headers
-# Alias: preproc::preproc_headers
+# Target: c_preproc_headers
+# Alias: c_preproc::c_preproc_headers
 # Type: Interface Library
 # ───────────────────────────────────────────────────────────────────────────── 
 # Target definition
-add_library(preproc_headers INTERFACE)
+add_library(c_preproc_headers INTERFACE)
 
 # Target alias
-add_library(preproc::preproc_headers 
+add_library(c_preproc::c_preproc_headers 
     ALIAS
-        preproc_headers
+        c_preproc_headers
 )
 
 # Target headers
-target_include_directories(preproc_headers
+target_include_directories(c_preproc_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
